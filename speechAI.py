@@ -21,6 +21,7 @@ nltk.download('punkt')
 
 #Import spacy and load web model
 import spacy
+#Must download in terminal before loading it
 spacy.load("en_core_web_sm")
 from spacy.vocab import Vocab
 
