@@ -119,8 +119,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
 #Create and fit model
 clf = MLPRegressor().fit(X_train, y_train)
 
+#User Input
 inp = input("Say something:")
 
+#Data cleaning
 for k in range(0, len(inp.split(" "))):
   sent.append(nlp(inp[k].lower()).vector_norm)
 
@@ -129,6 +131,7 @@ for i in range(0, biggestLen - len(inp.split(" "))):
 
 sent = [sent]
 
+#Predicting
 predictions = clf.predict(sent)
 pdb.set_trace()
 # outputlist = [w2vModel.wv.similar_by_vector([predictions[0][i], predictions[0][i]], topn=1)[0][0] for i in range(biggestLen)]
